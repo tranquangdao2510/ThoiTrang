@@ -1,0 +1,61 @@
+Employes
+	- int id
+	- string name
+	- string email
+	- string password
+	- int phone
+	- string address
+	- role_id int
+	- bool status
+	- created_at Datetime
+	- updated_at DateTime
+Role
+
+Product
+	- id int
+	- string title
+	- string image
+	- double price
+	- int quantity
+	- int view
+	- bool status
+	- int cate_id
+	- DateTime created_at
+	- DateTime updated_at
+ProductDetail
+	- int product_id
+	- int size_id
+	- int color_id
+	- string description
+	- string image_detail
+	- bool status
+Customer
+	- int id
+	- string name
+	- string email
+	- string password
+	- int phone
+	- string address
+	- bool status
+Order 
+	int id 
+	int customer_id
+	double total_amount
+	string payment
+	string note
+	bool status
+OrderDetail
+	int id
+	int order_detail
+	int product_detail
+	bool status
+	int quantity
+	int price
+Size 
+	int id 
+	string name
+	bool status
+Color 
+	int id
+	string name
+	bool status
