@@ -1,4 +1,4 @@
-package com.example.appthoitrang.Models;
+package com.example.appthoitrang;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.appthoitrang.R;
 
-public class CategoryActivity extends AppCompatActivity {
+public class OrderActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_category);
+        setContentView(R.layout.activity_order);
     }
 }

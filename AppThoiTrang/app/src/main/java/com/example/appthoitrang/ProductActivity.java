@@ -1,4 +1,4 @@
-package com.example.appthoitrang.Models;
+package com.example.appthoitrang;
 
 import androidx.appcompat.app.AppCompatActivity;
 
