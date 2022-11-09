@@ -1,76 +1,224 @@
 package com.example.appthoitrang;
 
-import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.View;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.example.appthoitrang.databinding.ActivityMainBinding;
-
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.ViewFlipper;
 
-public class MainActivity extends AppCompatActivity {
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.example.appthoitrang.Models.CustomerMangment;
+import com.example.appthoitrang.Models.Product;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
+import java.util.ArrayList;
 
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    Toolbar toolbar;
+    ViewFlipper viewFlipper;
+    DrawerLayout drawerLayout;
+    LinearLayout listView;
+    CustomerMangment customerMangment;
+
+
+    private RecyclerView recyclerView;
+    private final Response.Listener<String> listener = new Response.Listener<String>() {
+        @Override
+        public void onResponse(String response) {
+            try {
+                Log.e("BKAP", "JSON: " + response);
+//               GsonBuilder builder = new GsonBuilder();
+//               Gson gson = builder.create();
+//                Product data[] = gson.fromJson(response, Product[].class);
+////                AdapterHome adapter = new AdapterHome(MainActivity.this,data);
+//                recyclerView.setAdapter(adapter);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    };
+    private Response.ErrorListener errorListener= new Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            Log.e("BKAP","ERROR: " + error.getMessage());
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        setSupportActionBar(binding.toolbar);
-
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-        binding.fab.setOnClickListener(new View.OnClickListener() {
+        customerMangment = new CustomerMangment();
+        AnhXa();
+        ActionBar();
+        ActionViewFliper();
+        //Chuyển trang giỏ hàng
+        FloatingActionButton cart = (FloatingActionButton) findViewById(R.id.fab);
+        cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent=new Intent(MainActivity.this,CartActivity.class);
+                startActivity(intent);
+
             }
         });
-    }
+        //loadJSON();
+        recyclerView =findViewById(R.id.listProduct);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
 
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        View headerView=navigationView.getHeaderView(0);
+        TextView userNameTxtView=headerView.findViewById(R.id.username);
+//        HashMap<String,String> cus= customerMangment.myaccount();
+//        String mEmail = cus.get(customerMangment.EMAIL);
+
+//        userNameTxtView.setText(mEmail);
+
+    }
+    private void ActionViewFliper(){
+        ArrayList<String> mangbanner = new ArrayList<>();
+        mangbanner.add("https://apollotran.b-cdn.net/prestashop/leo_minimal_demo/themes/leo_minimal/assets/img/modules/leoslideshow/bg-slide-3-1.jpg");
+        mangbanner.add("https://apollotran.b-cdn.net/prestashop/leo_minimal_demo/themes/leo_minimal/assets/img/modules/leoslideshow/bg-slide-3-2.jpg");
+        mangbanner.add("https://apollotran.b-cdn.net/prestashop/leo_minimal_demo/themes/leo_minimal/assets/img/modules/leoslideshow/bg-slide-2-1.jpg");
+        for (int i=0;i<mangbanner.size(); i++){
+            ImageView imageView = new ImageView(getApplicationContext());
+//           Picasso.with(getApplicationContext()).load(mangbanner.get(i)).into(imageView);
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            viewFlipper.addView(imageView);
+        }
+        viewFlipper.setFlipInterval(5000);
+        viewFlipper.setAutoStart(true);
+        Animation animation_slide_in = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide_in_right);
+        Animation animation_slide_out = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide_out_right);
+        viewFlipper.setInAnimation(animation_slide_in);
+        viewFlipper.setOutAnimation(animation_slide_out);
+
+    }
+    @SuppressLint("RestrictedApi")
+    private void ActionBar(){
+        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbartrangchu);
+        toolbar.setTitle("Trang chủ");
+        setSupportActionBar(toolbar);
+
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawerlayout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+    }
+    private void AnhXa(){
+        toolbar= findViewById(R.id.toolbartrangchu);
+        viewFlipper =  findViewById(R.id.viewflipper);
+        //recyclerViewTrangChu = findViewById(R.id.recyclerview);
+        drawerLayout = findViewById(R.id.drawerlayout);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.home, menu);
+        return super.onCreateOptionsMenu(menu);
+
+        // Associate searchable configuration with the SearchView
+//        SearchManager searchManager =
+//                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+//        SearchView searchView =
+//                (SearchView) menu.findItem(R.id.action_search).getActionView();
+//        ComponentName componentName=new ComponentName(getBaseContext(),SearchResultActivity.class);
+//        searchView.setSearchableInfo(
+//                searchManager.getSearchableInfo(componentName));
+
+        //return true;
+    }
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawerlayout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.nav_home:
+                Intent intent_home = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent_home);
+                break;
+            case R.id.nav_shop:
+                Intent intent_shop = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent_shop);
+                break;
+            case R.id.nav_product:
+                Intent intent_product = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent_product);
+                break;
+            case R.id.nav_like:
+                Intent intent_like = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent_like);
+                break;
+            case R.id.nav_contact_us:
+                Intent intent_contact = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent_contact);
+                break;
+            case R.id.nav_my_account:
+                Intent intent_account = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent_account);
+                break;
+            case R.id.nav_order:
+                Intent intent_order = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent_order);
+                break;
+            case R.id.nav_sign_out:
+                Intent intent_sign_out = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent_sign_out);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + id);
+        }
+
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
+        drawerLayout.closeDrawer(GravityCompat.START);
+
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
-    }
+//    private void loadJSON() {
+//        Host host = new Host();
+//        String url = "http://" + host.getHost() + ":8183/api/list_product?sort=1";
+//        RequestQueue queue = Volley.newRequestQueue(this);
+//        StringRequest stringRequest = new StringRequest(url, listener, errorListener);
+//
+//        queue.add(stringRequest);
+//    }
 }
