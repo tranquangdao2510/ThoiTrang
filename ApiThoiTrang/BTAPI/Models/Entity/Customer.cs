@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,6 +8,7 @@ namespace BTAPI.Models.Entity
 {
     public class Customer
     {
+        [Key]
         public int Id { get; set; }
         public int Name { get; set; }
         public bool Gender { get; set; }
@@ -16,6 +18,7 @@ namespace BTAPI.Models.Entity
         public string Phone { get; set; }
         public string Address { get; set; }
         public string Status { get; set; }
+
 
 
     }
