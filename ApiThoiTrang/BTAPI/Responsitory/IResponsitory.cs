@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BTAPI.Responsitory
+namespace API.Responsitory
 {
     public interface IRepository<T> where T : class, new()
     {

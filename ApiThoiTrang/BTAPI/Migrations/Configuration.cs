@@ -1,11 +1,11 @@
-namespace BTAPI.Migrations
+namespace API.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BTAPI.Models.DataModel.DbConn>
+    internal sealed class Configuration : DbMigrationsConfiguration<API.Models.DataModel.DbConn>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace BTAPI.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(BTAPI.Models.DataModel.DbConn context)
+        protected override void Seed(API.Models.DataModel.DbConn context)
         {
             //  This method will be called after migrating to the latest version.
 

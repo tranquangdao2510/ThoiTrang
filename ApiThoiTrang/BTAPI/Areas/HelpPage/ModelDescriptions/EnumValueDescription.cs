@@ -1,4 +1,4 @@
-namespace BTAPI.Areas.HelpPage.ModelDescriptions
+namespace API.Areas.HelpPage.ModelDescriptions
 {
     public class EnumValueDescription
     {

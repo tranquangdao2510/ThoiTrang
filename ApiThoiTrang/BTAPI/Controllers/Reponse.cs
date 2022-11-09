@@ -1,6 +1,6 @@
-﻿using BTAPI.Models.DataModel;
+﻿using API.Models.DataModel;
 
-namespace BTAPI.Controllers.API
+namespace API.Controllers.API
 {
     internal class Reponse<T>
     {

@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 
-namespace BTAPI.Models.DataModel
+namespace API.Models.DataModel
 {
     public class HttpPostedFileMultipart : HttpPostedFileBase
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace BTAPI.Areas.HelpPage.ModelDescriptions
+namespace API.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

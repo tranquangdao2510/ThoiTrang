@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using BTAPI.Areas.HelpPage.ModelDescriptions;
-using BTAPI.Areas.HelpPage.Models;
+using API.Areas.HelpPage.ModelDescriptions;
+using API.Areas.HelpPage.Models;
 
-namespace BTAPI.Areas.HelpPage.Controllers
+namespace API.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

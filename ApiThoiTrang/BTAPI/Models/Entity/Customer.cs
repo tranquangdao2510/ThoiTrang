@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace BTAPI.Models.Entity
+namespace API.Models.Entity
 {
     public class Customer
     {

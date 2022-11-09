@@ -1,4 +1,4 @@
-﻿using BTAPI.Models.DataModel;
+﻿using API.Models.DataModel;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace BTAPI.Responsitory
+namespace API.Responsitory
 {
     public class Repository<T> : IRepository<T> where T : class, new()
     {

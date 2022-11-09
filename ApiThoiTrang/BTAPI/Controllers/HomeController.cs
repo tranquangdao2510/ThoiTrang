@@ -1,13 +1,13 @@
-﻿using BTAPI.Models.DataModel;
-using BTAPI.Models.Entity;
-using BTAPI.Responsitory;
+﻿using API.Models.DataModel;
+using API.Models.Entity;
+using API.Responsitory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BTAPI.Controllers
+namespace API.Controllers
 {
     public class HomeController : Controller
     {

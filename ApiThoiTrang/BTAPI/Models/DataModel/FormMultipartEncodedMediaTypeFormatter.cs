@@ -16,7 +16,7 @@ using System.Web.Http.Validation;
 using System.Web.Http.Validation.Providers;
 using System.Web.Http.ValueProviders.Providers;
 
-namespace BTAPI.Models.DataModel
+namespace API.Models.DataModel
 {
     public class FormMultipartEncodedMediaTypeFormatter : MediaTypeFormatter
     {

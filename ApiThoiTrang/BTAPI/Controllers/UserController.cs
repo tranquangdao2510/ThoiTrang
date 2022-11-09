@@ -1,4 +1,4 @@
-﻿using BTAPI.Models.DataModel;
+﻿using API.Models.DataModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Http;
 
-namespace BTAPI.Controllers.API
+namespace API.Controllers.API
 {
     [RoutePrefix("api/user")]
     public class UserController : ApiController
