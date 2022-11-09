@@ -13,19 +13,19 @@ namespace API.Models.DataModel
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<DbConn, Migrations.Configuration>("ThoiTrang"));
         }
-        public DbSet<User> users { get; set; }
+       // public DbSet<User> users { get; set; }
 
         #region db Thời trang
-         public DbSet<Size> Sizes { get; set; }
+         public DbSet<Size> Size { get; set; }
 
-        public DbSet<OrderDetail> OrderDetails { get; set; }
-        public DbSet<Employes> Employes { get; set; }
-        public DbSet<Category> Categorys { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<ProductDetail> ProductDetails { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<Color> Colors { get; set; }
+        public DbSet<OrderDetail> OrderDetail { get; set; }
+        public DbSet<Employes> Employe { get; set; }
+        public DbSet<Category> Category { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<ProductDetail> ProductDetail { get; set; }
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<Color> Color { get; set; }
 
 
         #endregion

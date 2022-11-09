@@ -19,70 +19,80 @@ namespace API.Responsitory
             db = new DbConn();
             tbl = db.Set<T>();
         }
-        public  CommonResponseDto AddOrUpdate(T entity,object id)
+        public bool Add(T entity)
         {
-            CommonResponseDto dto = new CommonResponseDto();
             try
             {
-                if (id == null)
-                {
-                    tbl.Add(entity);
-                    db.SaveChanges();
-                    dto.Code = CommonEnum.ResponseCodeStatus.ThanhCong;
-                    dto.Message = string.Empty;
-                }
-                else
-                {
-                    db.Entry(entity).State = EntityState.Modified;
-                    db.SaveChanges();
-                    dto.Code = CommonEnum.ResponseCodeStatus.ThanhCong;
-                    dto.Message = string.Empty;
-                }
+                tbl.Add(entity);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool Edit(T entity)
+        {
+            try
+            {
+                db.Entry(entity).State = EntityState.Modified;
+                db.SaveChanges();
+                return true;
             }
             catch (Exception ex)
             {
-                dto.ErrorCode = ex.Message;
+                return false;
             }
-            return dto;
         }
+
+        public IEnumerable<T> Get(Expression<Func<T, bool>> predicate)
+        {
+            return tbl.Where(predicate).AsEnumerable();
+        }
+
         public IEnumerable<T> GetAll()
         {
-            return tbl.AsNoTracking().AsEnumerable();
+            //return tbl.AsNoTracking().AsEnumerable();
+            return tbl.AsEnumerable();
         }
 
-        public CommonResponseDto GetById(object id)
+        public T GetById(object id)
         {
-            CommonResponseDto dto = new CommonResponseDto();
-            try
-            {
-               var byId = tbl.Find(id);
-                dto.Code = CommonEnum.ResponseCodeStatus.ThanhCong;
-                dto.Message = string.Empty;
-                dto.ReturnValue = byId;
-            }
-            catch (Exception ex)
-            {
-                dto.Message = ex.Message;
-            }
-            return dto;
+            return tbl.Find(id);
         }
 
-        public CommonResponseDto Remove(object id)
+        public IEnumerable<T> GetInclude(string include)
         {
-            CommonResponseDto dto = new CommonResponseDto();
+
+            var data = tbl.AsQueryable();
+            string[] includes = include.Split(',');
+            foreach (var item in includes)
+            {
+                data = data.Include(item);
+            }
+            return data;
+        }
+
+        public IEnumerable<T> GetNoTracking(Expression<Func<T, bool>> predicate)
+        {
+            return tbl.Where(predicate).AsNoTracking().AsEnumerable();
+        }
+
+        public bool Remove(object id)
+        {
             try
             {
                 var entity = GetById(id);
-                tbl.Remove((T)entity.ReturnValue);
+                tbl.Remove(entity);
                 db.SaveChanges();
-                dto.Code = CommonEnum.ResponseCodeStatus.ThanhCong;
-                dto.Message = string.Empty;
+                return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                dto.ErrorCode = ex.Message;
+                return false;
             }
-            return dto;
         }
     }
 }

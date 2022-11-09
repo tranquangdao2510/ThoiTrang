@@ -121,3 +121,5 @@ C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\obj\Debug\API.csp
 C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\obj\Debug\BTAPI.dll
 C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\obj\Debug\BTAPI.pdb
 C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\obj\Debug\API.csproj.AssemblyReference.cache
+C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\obj\Debug\API.Migrations.Initial.resources
+C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\obj\Debug\API.csproj.GenerateResource.cache

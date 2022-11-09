@@ -11,7 +11,7 @@ namespace API.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IRepository<Color> ColerTable;
+        private IRepository<Color> ColerTable;
         private DbConn db;
         public HomeController()
         {

@@ -7,7 +7,6 @@ using System.Web;
 
 namespace API.Models.Entity
 {
-    [Table("Category")]
     public class Category 
     {
         [Key]
