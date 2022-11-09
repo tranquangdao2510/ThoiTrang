@@ -12,5 +12,6 @@ namespace BTAPI.Models.Entity
         public int Id { get; set; }
         public string Name { get; set; }
         public bool Status { get; set; }
+        public ICollection<ProductDetail> ProductDetail { get; set; }
     }
 }

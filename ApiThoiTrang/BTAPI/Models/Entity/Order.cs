@@ -19,5 +19,8 @@ namespace BTAPI.Models.Entity
 
         [ForeignKey("Customer_id")]
         public Customer Customer { get; set; }
+        public ICollection<OrderDetail> OrderDetail { get; set; }
+       
+        
     }
 }

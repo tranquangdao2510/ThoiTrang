@@ -21,5 +21,6 @@ namespace BTAPI.Models.Entity
 
         [ForeignKey("Cate_id")]
         public Category Category { get; set; }
+        public ICollection<ProductDetail> ProductDetail { get; set; }
     }
 }

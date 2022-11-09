@@ -11,6 +11,7 @@ using System.Web.Http;
 
 namespace BTAPI.Controllers.API
 {
+    [RoutePrefix("api/user")]
     public class UserController : ApiController
     {
         public DbConn db;
@@ -19,6 +20,7 @@ namespace BTAPI.Controllers.API
             db = new DbConn();
         }
         [HttpGet]
+        [Route("lay_danh_sach")]
         public IHttpActionResult Get()
         {
             var data = db.users.AsEnumerable();
@@ -28,6 +30,7 @@ namespace BTAPI.Controllers.API
                 status = 200,
                 mess = "thanh cong"
             });
+            return Ok();
         }
         [HttpGet]
         public IHttpActionResult GetId(int id)

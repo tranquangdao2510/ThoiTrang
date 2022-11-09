@@ -18,8 +18,6 @@ namespace BTAPI.Models.Entity
         public string Phone { get; set; }
         public string Address { get; set; }
         public string Status { get; set; }
-
-
-
+        public ICollection<Order> Order { get; set; }
     }
 }

@@ -23,5 +23,7 @@ namespace BTAPI.Models.Entity
         public Size Size { get; set; }
         [ForeignKey("Color_id")]
         public Color Color { get; set; }
+        public ICollection<OrderDetail> OrderDetail { get; set; }
+
     }
 }

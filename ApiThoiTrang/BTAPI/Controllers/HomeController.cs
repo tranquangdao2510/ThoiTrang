@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BTAPI.Models.DataModel;
+using BTAPI.Models.Entity;
+using BTAPI.Responsitory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,11 +11,18 @@ namespace BTAPI.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IRepository<Color> ColerTable;
+        private DbConn db;
+        public HomeController()
+        {
+            db = new DbConn();
+            ColerTable = new Repository<Color>();
+        }
+
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
-            return View();
+            var data = ColerTable.GetAll();
+            return View(data);
         }
     }
 }
