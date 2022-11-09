@@ -22,6 +22,14 @@ namespace API.Controllers
         public ActionResult Index()
         {
             var data = ColerTable.GetAll();
+            var da = (from i in db.Color.AsEnumerable()
+                     select new Color
+                     {
+                         Id = i.Id,
+                         Name = i.Name,
+                         Status = i.Status,
+                     });
+
             return View(data);
         }
     }

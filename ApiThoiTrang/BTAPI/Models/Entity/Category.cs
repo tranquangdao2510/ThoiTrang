@@ -11,8 +11,8 @@ namespace API.Models.Entity
     {
         [Key]
         public int Id { get; set; }
-        public int Name { get; set; }
-        public int Status { get; set; }
+        public string Name { get; set; }
+        public bool Status { get; set; }
         public ICollection<Product> Product { get; set; }
     }
 }

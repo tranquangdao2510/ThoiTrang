@@ -343,14 +343,21 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li><a href="@Url.Action("Index","Transaction")"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                    <li><a href="@Url.Action("Index","Coler")"><i class="fa fa-dashboard"></i> <span>Coler</span></a></li>
+                    <li><a href="@Url.Action("Index","Size")"><i class="fa fa-dashboard"></i> <span>Size</span></a></li>
+                    <li><a href="@Url.Action("Index","Category")"><i class="fa fa-dashboard"></i> <span>Category</span></a></li>
+                    @*<li><a href="@Url.Action("Index","Coler")"><i class="fa fa-dashboard"></i> <span>Coler</span></a></li>
+                    <li><a href="@Url.Action("Index","Coler")"><i class="fa fa-dashboard"></i> <span>Coler</span></a></li>
+                    <li><a href="@Url.Action("Index","Coler")"><i class="fa fa-dashboard"></i> <span>Coler</span></a></li>
+                    <li><a href="@Url.Action("Index","Coler")"><i class="fa fa-dashboard"></i> <span>Coler</span></a></li>*@
+                    @*<li><a href="@Url.Action("Index","Transaction")"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                     <li><a href="@Url.Action("Index","GroupUser")"><i class="fa fa-male"></i> <span>GroupUser Management</span></a></li>
                     <li><a href="@Url.Action("Index","User")"><i class="fa fa-male"></i> <span>User Management</span></a></li>
                     <li><a href="@Url.Action("Index","BankAccount")"><i class="fa fa-tag"></i> <span>Bank Account Management</span></a></li>
                     <li><a href="@Url.Action("Index","Branch")"><i class="fa fa-address-book"></i> <span>Branch Management</span></a></li>
                     <li><a href="@Url.Action("Index","Currenci")"><i class="fa fa-money"></i> <span>Currency Management</span></a></li>
                     <li><a href="@Url.Action("Index","Chanels")"><i class="fa fa-television"></i> <span>Chanels Management</span></a></li>
-                    <li><a href="@Url.Action("Index","Business")"><i class="fa fa-pencil"></i> <span>Business Management</span></a></li>
+                    <li><a href="@Url.Action("Index","Business")"><i class="fa fa-pencil"></i> <span>Business Management</span></a></li>*@
 
                 </ul>
             </section>
@@ -359,7 +366,10 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            @RenderBody()
+            <div class="invoice p-3 mb-3">
+                @RenderBody()
+
+            </div>
 
         </div>
 
