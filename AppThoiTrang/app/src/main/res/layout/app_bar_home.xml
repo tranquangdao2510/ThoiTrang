@@ -12,7 +12,7 @@
         android:theme="@style/Theme.AppThoiTrang.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbartrangchu"
+            android:id="@+id/toolbarHome"
             android:background="@color/colorPrimary"
             app:title="Trang chủ"
             app:titleTextColor="#121111"

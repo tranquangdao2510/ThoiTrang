@@ -30,6 +30,7 @@ import com.example.appthoitrang.Models.CustomerMangment;
 import com.example.appthoitrang.Models.Product;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mangbanner.add("https://apollotran.b-cdn.net/prestashop/leo_minimal_demo/themes/leo_minimal/assets/img/modules/leoslideshow/bg-slide-2-1.jpg");
         for (int i=0;i<mangbanner.size(); i++){
             ImageView imageView = new ImageView(getApplicationContext());
-//           Picasso.with(getApplicationContext()).load(mangbanner.get(i)).into(imageView);
+           Picasso.with(getApplicationContext()).load(mangbanner.get(i)).into(imageView);
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             viewFlipper.addView(imageView);
         }
@@ -119,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
     @SuppressLint("RestrictedApi")
     private void ActionBar(){
-        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbartrangchu);
+        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbarHome);
         toolbar.setTitle("Trang chủ");
         setSupportActionBar(toolbar);
 
@@ -135,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
     private void AnhXa(){
-        toolbar= findViewById(R.id.toolbartrangchu);
+        toolbar= findViewById(R.id.toolbarHome);
         viewFlipper =  findViewById(R.id.viewflipper);
         //recyclerViewTrangChu = findViewById(R.id.recyclerview);
         drawerLayout = findViewById(R.id.drawerlayout);
@@ -176,31 +177,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent_home);
                 break;
             case R.id.nav_shop:
-                Intent intent_shop = new Intent(MainActivity.this, MainActivity.class);
+                Intent intent_shop = new Intent(MainActivity.this, CategoryActivity.class);
                 startActivity(intent_shop);
                 break;
             case R.id.nav_product:
-                Intent intent_product = new Intent(MainActivity.this, MainActivity.class);
+                Intent intent_product = new Intent(MainActivity.this, ProductActivity.class);
                 startActivity(intent_product);
                 break;
             case R.id.nav_like:
-                Intent intent_like = new Intent(MainActivity.this, MainActivity.class);
+                Intent intent_like = new Intent(MainActivity.this, WishListActivity.class);
                 startActivity(intent_like);
                 break;
             case R.id.nav_contact_us:
-                Intent intent_contact = new Intent(MainActivity.this, MainActivity.class);
+                Intent intent_contact = new Intent(MainActivity.this, ContactActivity.class);
                 startActivity(intent_contact);
                 break;
             case R.id.nav_my_account:
-                Intent intent_account = new Intent(MainActivity.this, MainActivity.class);
+                Intent intent_account = new Intent(MainActivity.this, MyAccountActivity.class);
                 startActivity(intent_account);
                 break;
             case R.id.nav_order:
-                Intent intent_order = new Intent(MainActivity.this, MainActivity.class);
+                Intent intent_order = new Intent(MainActivity.this, OrderActivity.class);
                 startActivity(intent_order);
                 break;
             case R.id.nav_sign_out:
-                Intent intent_sign_out = new Intent(MainActivity.this, MainActivity.class);
+                Intent intent_sign_out = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(intent_sign_out);
                 break;
             default:

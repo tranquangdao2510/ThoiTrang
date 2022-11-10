@@ -8,35 +8,35 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/shop"
-            android:title="Trang chủ"/>
+            android:title="Home"/>
         <item
             android:id="@+id/nav_shop"
             android:icon="@drawable/categories"
-            android:title="Danh mục" />
+            android:title="Category" />
         <item
             android:id="@+id/nav_product"
             android:icon="@drawable/product"
-            android:title="Sản phẩm" />
+            android:title="Product" />
         <item
             android:id="@+id/nav_like"
             android:icon="@drawable/heart1"
-            android:title="Yêu thích" />
+            android:title="Product Liked "/>
         <item
             android:id="@+id/nav_contact_us"
             android:icon="@drawable/contactus"
-            android:title="Liên hệ" />
+            android:title="Contact" />
         <item
             android:id="@+id/nav_my_account"
             android:icon="@drawable/myaccount"
-            android:title="Tài khoản" />
+            android:title="My Account" />
         <item
             android:id="@+id/nav_order"
             android:icon="@drawable/myaccount"
-            android:title="Lịch sử đặt hàng" />
+            android:title="Order Historys" />
         <item
             android:id="@+id/nav_sign_out"
             android:icon="@drawable/logout"
-            android:title="Đăng xuất" />
+            android:title="Logout" />
 
     </group>
 </menu>
