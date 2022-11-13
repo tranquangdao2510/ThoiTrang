@@ -116,10 +116,10 @@ C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\bin\System.Web.We
 C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\bin\System.Web.WebPages.Razor.xml
 C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\bin\Antlr3.Runtime.pdb
 C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\obj\Debug\API.Migrations.Initial.resources
+C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\obj\Debug\API.csproj.GenerateResource.cache
 C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\obj\Debug\API.csproj.CoreCompileInputs.cache
 C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\obj\Debug\API.csproj.CopyComplete
 C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\obj\Debug\BTAPI.dll
 C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\obj\Debug\BTAPI.pdb
 C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\obj\Debug\API.csproj.AssemblyReference.cache
-C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\obj\Debug\API.Migrations.Initial.resources
-C:\Users\Nguyen Tu\OneDrive\Desktop\Project\ApiThoiTrang\BTAPI\obj\Debug\API.csproj.GenerateResource.cache

@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", new { @class = "btn btn-warning" })
 </p>
 <table class="table">
     <tr>
@@ -18,7 +18,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Status)
         </th>
-        <th></th>
+        <th>Thao tác</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -30,8 +30,8 @@
             @Html.DisplayFor(modelItem => item.Status)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new { @class = "btn btn-warning" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new { @class = "btn btn-warning" })
         </td>
     </tr>
 }

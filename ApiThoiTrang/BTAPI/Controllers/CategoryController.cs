@@ -6,8 +6,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BTAPI.Controllers
+namespace API.Controllers
 {
+    [CustomAuthorize]
     public class CategoryController : Controller
     {
         private IRepository<Category> Table;

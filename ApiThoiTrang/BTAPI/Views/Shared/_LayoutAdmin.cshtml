@@ -1,5 +1,5 @@
 ﻿@{
-    //var user = Session["admin"] as Banking_Online.DAL.User;
+    var user = Session["admin"] as API.Models.Entity.Employes;
 }
 <!DOCTYPE html>
 <html>
@@ -50,11 +50,11 @@
 
         <header class="main-header">
             <!-- Logo -->
-            <a href="index2.html" class="logo">
+            <a href="@Url.Action("Index","Coler")" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>A</b>LT</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-lg"><b>Thời trang</b></span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -66,19 +66,19 @@
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
-                        <li class="dropdown messages-menu">
+                        <!--<li class="dropdown messages-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-envelope-o"></i>
                                 <span class="label label-success">4</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="header">You have 4 messages</li>
-                                <li>
+                                <li>-->
                                     <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li>
+                                    <!--<ul class="menu">
+                                        <li>-->
                                             <!-- start message -->
-                                            <a href="#">
+                                            <!--<a href="#">
                                                 <div class="pull-left">
                                                     <img src="~/Areas/Admin/Content/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                                 </div>
@@ -88,9 +88,9 @@
                                                 </h4>
                                                 <p>Why not buy a new awesome theme?</p>
                                             </a>
-                                        </li>
+                                        </li>-->
                                         <!-- end message -->
-                                        <li>
+                                        <!--<li>
                                             <a href="#">
                                                 <div class="pull-left">
                                                     <img src="~/Areas/Admin/Content/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
@@ -142,18 +142,18 @@
                                 </li>
                                 <li class="footer"><a href="#">See All Messages</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                         <!-- Notifications: style can be found in dropdown.less -->
-                        <li class="dropdown notifications-menu">
+                        <!--<li class="dropdown notifications-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-bell-o"></i>
                                 <span class="label label-warning">10</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="header">You have 10 notifications</li>
-                                <li>
+                                <li>-->
                                     <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
+                                    <!--<ul class="menu">
                                         <li>
                                             <a href="#">
                                                 <i class="fa fa-users text-aqua"></i> 5 new members joined today
@@ -184,21 +184,21 @@
                                 </li>
                                 <li class="footer"><a href="#">View all</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                         <!-- Tasks: style can be found in dropdown.less -->
-                        <li class="dropdown tasks-menu">
+                        <!--<li class="dropdown tasks-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-flag-o"></i>
                                 <span class="label label-danger">9</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="header">You have 9 tasks</li>
-                                <li>
+                                <li>-->
                                     <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li>
+                                    <!--<ul class="menu">
+                                        <li>-->
                                             <!-- Task item -->
-                                            <a href="#">
+                                            <!--<a href="#">
                                                 <h3>
                                                     Design some buttons
                                                     <small class="pull-right">20%</small>
@@ -210,11 +210,11 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li>
+                                        </li>-->
                                         <!-- end task item -->
-                                        <li>
+                                        <!--<li>-->
                                             <!-- Task item -->
-                                            <a href="#">
+                                            <!--<a href="#">
                                                 <h3>
                                                     Create a nice theme
                                                     <small class="pull-right">40%</small>
@@ -226,11 +226,11 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li>
+                                        </li>-->
                                         <!-- end task item -->
-                                        <li>
+                                        <!--<li>-->
                                             <!-- Task item -->
-                                            <a href="#">
+                                            <!--<a href="#">
                                                 <h3>
                                                     Some task I need to do
                                                     <small class="pull-right">60%</small>
@@ -242,11 +242,11 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li>
+                                        </li>-->
                                         <!-- end task item -->
-                                        <li>
+                                        <!--<li>-->
                                             <!-- Task item -->
-                                            <a href="#">
+                                            <!--<a href="#">
                                                 <h3>
                                                     Make beautiful transitions
                                                     <small class="pull-right">80%</small>
@@ -258,18 +258,18 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li>
+                                        </li>-->
                                         <!-- end task item -->
-                                    </ul>
+                                    <!--</ul>
                                 </li>
                                 <li class="footer">
                                     <a href="#">View all tasks</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li>-->
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
-                            @*@if (Session["admin"] != null)
+                            @if (Session["admin"] != null)
                             {
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="~/Areas/Admin/Content/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
@@ -286,15 +286,13 @@
                                         </p>
                                     </li>
                                     <li class="user-footer">
-                                        <div class="pull-left">
-                                            <a href="@Url.Action("Profiles","HomeAdmin",new { id = Session["UserId"]})" class="btn btn-default btn-flat">Profile</a>
-                                        </div>
+                                       
                                         <div class="pull-right">
                                             <a href="/Home/Login" class="btn btn-default btn-flat">Sign out</a>
                                         </div>
                                     </li>
                                 </ul>
-                            }*@
+                            }
                         </li>
                         <!-- Control Sidebar Toggle Button -->
                         <li>
@@ -314,9 +312,9 @@
                         <img src="~/Areas/Admin/Content/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        @*@if (@user != null)
+                        @if (@user != null)
                         {
-                            <p>@user.UserName</p>
+                            <p>@user.Name</p>
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         }
                         else
@@ -324,7 +322,7 @@
                             <div>
                                 <a href="/Home/Login" class="btn btn-default btn-flat">Login</a>
                             </div>
-                        }*@
+                        }
 
                     </div>
                 </div>
@@ -346,10 +344,10 @@
                     <li><a href="@Url.Action("Index","Coler")"><i class="fa fa-dashboard"></i> <span>Coler</span></a></li>
                     <li><a href="@Url.Action("Index","Size")"><i class="fa fa-dashboard"></i> <span>Size</span></a></li>
                     <li><a href="@Url.Action("Index","Category")"><i class="fa fa-dashboard"></i> <span>Category</span></a></li>
-                    @*<li><a href="@Url.Action("Index","Coler")"><i class="fa fa-dashboard"></i> <span>Coler</span></a></li>
-                    <li><a href="@Url.Action("Index","Coler")"><i class="fa fa-dashboard"></i> <span>Coler</span></a></li>
-                    <li><a href="@Url.Action("Index","Coler")"><i class="fa fa-dashboard"></i> <span>Coler</span></a></li>
-                    <li><a href="@Url.Action("Index","Coler")"><i class="fa fa-dashboard"></i> <span>Coler</span></a></li>*@
+                    <li><a href="@Url.Action("Index","Business")"><i class="fa fa-dashboard"></i> <span>Business</span></a></li>
+                    <li><a href="@Url.Action("Index","Employe")"><i class="fa fa-dashboard"></i> <span>Employe</span></a></li>
+                    <li><a href="@Url.Action("Index","GroupUser")"><i class="fa fa-dashboard"></i> <span>GroupUser</span></a></li>
+                    @*<li><a href="@Url.Action("Index","Coler")"><i class="fa fa-dashboard"></i> <span>Coler</span></a></li>*@
                     @*<li><a href="@Url.Action("Index","Transaction")"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                     <li><a href="@Url.Action("Index","GroupUser")"><i class="fa fa-male"></i> <span>GroupUser Management</span></a></li>
                     <li><a href="@Url.Action("Index","User")"><i class="fa fa-male"></i> <span>User Management</span></a></li>

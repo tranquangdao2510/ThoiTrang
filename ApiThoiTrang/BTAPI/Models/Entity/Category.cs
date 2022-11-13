@@ -11,7 +11,9 @@ namespace API.Models.Entity
     {
         [Key]
         public int Id { get; set; }
+        [Display(Name="Tên loại")]
         public string Name { get; set; }
+        [Display(Name = "Trạng thái")]
         public bool Status { get; set; }
         public ICollection<Product> Product { get; set; }
     }

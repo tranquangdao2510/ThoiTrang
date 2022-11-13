@@ -11,6 +11,7 @@ namespace API.Migrations
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
+            ContextKey = "Api.ThoiTrang.DbConn";
         }
 
         protected override void Seed(API.Models.DataModel.DbConn context)

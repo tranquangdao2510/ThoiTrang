@@ -216,12 +216,16 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\BusinessController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ColerController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\EmployeController.cs" />
+    <Compile Include="Controllers\GroupUserController.cs" />
     <Compile Include="Controllers\Reponse.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SizeController.cs" />
+    <Compile Include="CustomAuthorize.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -235,6 +239,11 @@
     <Compile Include="Models\DataModel\HttpPostedFileMultipart.cs" />
     <Compile Include="Models\DataModel\User.cs" />
     <Compile Include="Models\DataModel\UserView.cs" />
+    <Compile Include="Models\Entity\Admin\Business.cs" />
+    <Compile Include="Models\Entity\Admin\GroupPermission.cs" />
+    <Compile Include="Models\Entity\Admin\GroupUser.cs" />
+    <Compile Include="Controllers\Helper.cs" />
+    <Compile Include="Models\Entity\Admin\Permission.cs" />
     <Compile Include="Models\Entity\Category.cs" />
     <Compile Include="Models\Entity\Color.cs" />
     <Compile Include="Models\Entity\Customer.cs" />
@@ -495,6 +504,14 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cdn.jsdelivr.net\jquery.validation\1.16.0\additional-methods.min.js" />
+    <Content Include="Content\cdn.jsdelivr.net\jquery.validation\1.16.0\jquery.validate.min.js" />
+    <Content Include="Content\code.jquery.com\jquery-1.11.1.min.js" />
+    <Content Include="Content\css\Messs.css" />
+    <Content Include="Content\css\opensans-font.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\fonts\line-awesome\css\line-awesome.min.css" />
+    <Content Include="Content\fonts\line-awesome\fonts\line-awesomeeb4f.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -546,6 +563,22 @@
     <Content Include="Areas\Admin\Content\Login\fonts\poppins\Poppins-Bold.ttf" />
     <Content Include="Areas\Admin\Content\Login\fonts\poppins\Poppins-Medium.ttf" />
     <Content Include="Areas\Admin\Content\Login\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\fonts\line-awesome\fonts\line-awesome0176.eot" />
+    <Content Include="Content\fonts\line-awesome\fonts\line-awesomeeb4f.eot" />
+    <Content Include="Content\fonts\line-awesome\fonts\line-awesomeeb4f.ttf" />
+    <Content Include="Content\fonts\line-awesome\fonts\line-awesomeeb4f.woff" />
+    <Content Include="Content\fonts\line-awesome\fonts\line-awesomeeb4f.woff2" />
+    <Content Include="Content\fonts\Open_Sans\OpenSans-Bold.ttf" />
+    <Content Include="Content\fonts\Open_Sans\OpenSans-BoldItalic.ttf" />
+    <Content Include="Content\fonts\Open_Sans\OpenSans-ExtraBold.ttf" />
+    <Content Include="Content\fonts\Open_Sans\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="Content\fonts\Open_Sans\OpenSans-Italic.ttf" />
+    <Content Include="Content\fonts\Open_Sans\OpenSans-Light.ttf" />
+    <Content Include="Content\fonts\Open_Sans\OpenSans-LightItalic.ttf" />
+    <Content Include="Content\fonts\Open_Sans\OpenSans-Regular.ttf" />
+    <Content Include="Content\fonts\Open_Sans\OpenSans-SemiBold.ttf" />
+    <Content Include="Content\fonts\Open_Sans\OpenSans-SemiBoldItalic.ttf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -569,7 +602,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Coler\Index.cshtml" />
     <Content Include="Views\Coler\Create.cshtml" />
     <Content Include="Views\Coler\Edit.cshtml" />
@@ -582,6 +615,16 @@
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Create.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Business\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\GroupUser\Index.cshtml" />
+    <Content Include="Views\GroupUser\Create.cshtml" />
+    <Content Include="Views\GroupUser\Edit.cshtml" />
+    <Content Include="Views\GroupUser\GreanPermission.cshtml" />
+    <Content Include="Views\Employe\Index.cshtml" />
+    <Content Include="Views\Employe\Edit.cshtml" />
+    <Content Include="Views\Employe\Create.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

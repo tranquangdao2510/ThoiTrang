@@ -12,25 +12,67 @@ namespace API.Controllers
     public class HomeController : Controller
     {
         private IRepository<Color> ColerTable;
+        private IRepository<Employes> users;
         private DbConn db;
         public HomeController()
         {
             db = new DbConn();
             ColerTable = new Repository<Color>();
+            users = new Repository<Employes>();
         }
 
-        public ActionResult Index()
+        public ActionResult Login()
         {
-            var data = ColerTable.GetAll();
-            var da = (from i in db.Color.AsEnumerable()
-                     select new Color
-                     {
-                         Id = i.Id,
-                         Name = i.Name,
-                         Status = i.Status,
-                     });
-
-            return View(data);
+            return View();
         }
+        [HttpPost]
+        public ActionResult Login(string email, string password)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var data = users.GetAll().FirstOrDefault(x=>x.Email == email);
+                    if (data != null)
+                    {
+                       if (data.Password.Equals(password) && data.Status == false)
+                       {
+                            //MessageBox.Show("Tài khoản đã bị khóa");
+                            //MessageBox.Show("This account has been locked! Because you login more 3 times.");
+                            ModelState.AddModelError("Name", "GroupName is existed.");
+                            return RedirectToAction("Login");
+                       }
+                        else if (data.Password.Equals(password) && data.Status == true)
+                        {
+                                Session["admin"] = data;
+                                Session["email"] = data.Email;
+                                Session["username"] = data.Name;
+                                Session["UserId"] = data.Id;
+                                Session["Layout"] = "~/Views/Shared/_LayoutAdmin.cshtml";
+                                return RedirectToAction("Index", "Coler");
+                        }
+                    }
+                    else
+                    {
+                        //MessageBox.Show("Email không đúng.");
+                        //ViewBag.Message = "You input wrong password or email";
+                        return RedirectToAction("Login");
+                    }
+                }
+                return View();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+
+        public ActionResult Error()
+        {
+            return View();
+        }
+
     }
 }

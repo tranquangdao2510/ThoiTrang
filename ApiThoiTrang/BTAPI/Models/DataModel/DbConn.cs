@@ -1,4 +1,5 @@
 ﻿using API.Models.Entity;
+using API.Models.Entity.Admin;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -27,10 +28,13 @@ namespace API.Models.DataModel
         public DbSet<Order> Order { get; set; }
         public DbSet<Color> Color { get; set; }
 
-
         #endregion
+        public DbSet<Business> Business { get; set; }
+        public DbSet<GroupPermission> GroupPermission { get; set; }
+        public DbSet<GroupUser> GroupUser { get; set; }
+        public DbSet<Permission> Permission { get; set; }
 
-       
+
 
     }
 }
