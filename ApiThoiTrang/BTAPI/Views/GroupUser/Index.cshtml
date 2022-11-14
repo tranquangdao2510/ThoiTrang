@@ -1,0 +1,101 @@
+﻿@model IEnumerable<API.Models.Entity.Admin.GroupUser>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="content-header">
+    <h1>Group User Management</h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">GroupUser</li>
+    </ol>
+</section>
+<section class="content">
+
+    <!-- Default box -->
+    <div class="box">
+        <div class="box-header with-border">
+            @*<h3 class="box-title">List groupUser</h3>*@
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                    <i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="box-body">
+            <div style="margin-left: 30px;">
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>
+                            @*@Html.ActionLink("Create New", null, "Create", new { @class = "btn btn-primary" })*@
+                            <a href="/GroupUser/Create" class="btn btn-primary">Create New</a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        @using (Html.BeginForm("Index", "GroupUser", FormMethod.Get, new { @class = "form-inline" }))
+                        {
+                            <input type="text" name="findName" class="form-control" value="" />
+                            <button class="btn btn-success" style="margin-left: 10px;">Search</button>
+                        }
+                    </div>
+                </div>
+                <br />
+                <table class="table">
+                    <tr>
+                        <th>Name</th>
+                        <th>IsAdmin</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsAdmin)
+                            </td>
+                            @if (@item.Status)
+                            {
+                                <td>Actived</td>
+                            }
+                            else
+                            {
+                                <td>NonActived</td>
+                            }
+                            @*<td>
+                                    @Html.DisplayFor(modelItem => item.Status)
+                                </td>*@
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" }) 
+                                @Html.ActionLink("GrantPermission", "GreanPermission", new { groupId = item.Id }, new { @class = "btn btn-info" }) 
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+                <br />
+                @*<p>Page:    @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount</p>
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))*@
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                Admin Management.
+            </div>
+
+            <!-- /.box-footer-->
+        </div>
+        <!-- /.box -->
+
+</section>
