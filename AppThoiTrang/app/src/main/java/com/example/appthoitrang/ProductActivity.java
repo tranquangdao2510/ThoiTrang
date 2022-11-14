@@ -18,13 +18,13 @@ public class ProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
-        Toolbar toolbar = findViewById(R.id.itemToolBarCategory);
+        Toolbar toolbar = findViewById(R.id.itemToolBarProduct);
         toolbar.setTitle("Product");
-setSupportActionBar(toolbar);
-recyclerView = findViewById(R.id.listProd);
-recyclerView.setHasFixedSize(true);
-recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        ActionBar actionBar =getSupportActionBar();
-actionBar.setDisplayHomeAsUpEnabled(true);
+        setSupportActionBar(toolbar);
+        recyclerView = findViewById(R.id.listProd);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 }
