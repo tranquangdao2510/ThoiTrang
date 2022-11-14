@@ -12,17 +12,18 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     cardview:cardCornerRadius="4dp">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/item_img_id"
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="130dp"
+            android:background="@color/colorBackground"
             android:scaleType="centerCrop"
-            android:src="@drawable/sumdress"
-            android:background="@color/colorBackground"/>
+            android:src="@drawable/sumdress" />
 
         <LinearLayout
             android:id="@+id/linear_layout_1"
@@ -33,29 +34,29 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
             <TextView
                 android:id="@+id/item_name_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_vertical"
+                android:text="Sản phẩm 1"
                 android:textColor="@color/colorLogo"
                 android:textSize="15sp"
-                android:gravity="center_vertical"
-                android:layout_width="0dp"
-                android:layout_weight="4"
-                android:layout_height="wrap_content"
-                android:text="Sản phẩm 1"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_marginRight="5dp"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.5"
                 android:src="@drawable/heart1"
                 app:tint="#FFF44336" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:layout_height="wrap_content">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/itemPhone"
@@ -72,18 +73,20 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="10dp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:paddingRight="5dp"
-            android:paddingBottom="5dp"
-            android:layout_height="wrap_content">
+            android:paddingBottom="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Đã bán "
                 android:textSize="12dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

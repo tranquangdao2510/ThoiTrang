@@ -24,7 +24,7 @@ CustomerMangment customerMangment;
         setContentView(R.layout.activity_my_account);
 
         Toolbar toolbar = findViewById(R.id.toolbarAccount);
-        toolbar.setTitle("Tài khoản");
+        toolbar.setTitle("My Account");
         setSupportActionBar(toolbar);
 
         // Get a support ActionBar corresponding to this toolbar
