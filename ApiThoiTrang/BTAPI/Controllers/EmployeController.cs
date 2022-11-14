@@ -76,12 +76,13 @@ namespace API.Controllers
 
             var _us = users.GetById(input.Id);
 
-            if (users.GetAll().Any(x => x.Name.Equals(input.Name) && x.Id != input.Id))
-            {
-                ModelState.AddModelError("UserName", "User name has been existed.");
-            }
+            //if (users.GetAll().Any(x => x.Name.Equals(input.Name) && x.Id != input.Id))
+            //{
+            //    ModelState.AddModelError("UserName", "User name has been existed.");
+            //}
             if (ModelState.IsValid)
             {
+
                 users.Edit(input);
                 return RedirectToAction("Index");
             }

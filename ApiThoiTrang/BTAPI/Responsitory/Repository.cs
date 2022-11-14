@@ -37,6 +37,7 @@ namespace API.Responsitory
         {
             try
             {
+                
                 db.Entry(entity).State = EntityState.Modified;
                 db.SaveChanges();
                 return true;
@@ -54,8 +55,8 @@ namespace API.Responsitory
 
         public IEnumerable<T> GetAll()
         {
-            //return tbl.AsNoTracking().AsEnumerable();
-            return tbl.AsEnumerable();
+            return tbl.AsNoTracking().AsEnumerable();
+            //return tbl.AsEnumerable();
         }
 
         public T GetById(object id)
