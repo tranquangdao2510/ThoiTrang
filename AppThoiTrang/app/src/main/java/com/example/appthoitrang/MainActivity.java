@@ -24,12 +24,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.appthoitrang.Adapters.AdapterHome;
 import com.example.appthoitrang.Models.CustomerMangment;
 import com.example.appthoitrang.Models.Product;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -49,11 +55,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         public void onResponse(String response) {
             try {
                 Log.e("BKAP", "JSON: " + response);
-//               GsonBuilder builder = new GsonBuilder();
-//               Gson gson = builder.create();
-//                Product data[] = gson.fromJson(response, Product[].class);
-////                AdapterHome adapter = new AdapterHome(MainActivity.this,data);
-//                recyclerView.setAdapter(adapter);
+               GsonBuilder builder = new GsonBuilder();
+               Gson gson = builder.create();
+                Product data[] = gson.fromJson(response, Product[].class);
+               AdapterHome adapter = new AdapterHome(MainActivity.this,data);
+                recyclerView.setAdapter(adapter);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -84,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
-        //loadJSON();
+        loadJSON();
         recyclerView =findViewById(R.id.listProduct);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this,2));
@@ -214,12 +220,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-//    private void loadJSON() {
-//        Host host = new Host();
-//        String url = "http://" + host.getHost() + ":8183/api/list_product?sort=1";
-//        RequestQueue queue = Volley.newRequestQueue(this);
-//        StringRequest stringRequest = new StringRequest(url, listener, errorListener);
-//
-//        queue.add(stringRequest);
-//    }
+    private void loadJSON() {
+        Host host = new Host();
+        String url = "http://" + host.getHost() + ":8183/api/list_product?sort=1";
+        RequestQueue queue = Volley.newRequestQueue(this);
+        StringRequest stringRequest = new StringRequest(url, listener, errorListener);
+
+        queue.add(stringRequest);
+    }
 }
