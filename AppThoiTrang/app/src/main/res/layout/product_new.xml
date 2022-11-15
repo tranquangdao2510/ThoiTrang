@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view_product"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_width="wrap_content"
+    android:layout_height="300dp"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    cardview:cardCornerRadius="5dp">
+    <LinearLayout
+        android:id="@+id/itemProduct"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgPro"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/hoodie"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/namePro"
+                android:textColor="@color/colorLogo"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tên sản phẩm"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/pricePro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:text="Giá sản phẩm"
+                android:textColor="@color/colorLogo"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/priceSale"
+                android:textColor="@color/recyclerviewBackground"
+                android:textSize="10sp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giá sale"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/item_daban_id"
+                android:textColor="@color/colorLogo"
+                android:textSize="10sp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đã bán"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
