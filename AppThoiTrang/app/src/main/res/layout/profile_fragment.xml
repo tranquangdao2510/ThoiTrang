@@ -1,125 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
-
+    tools:context=".ProfileFragment">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <Button
-        android:id="@+id/sign_up_btn"
+        android:id="@+id/update_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="20dp"
         android:background="@drawable/buttons"
         android:padding="12dp"
-        android:text="Sign Up"
         android:textAllCaps="false"
-        android:onClick="actionRegister"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/tvStatus"
+        android:textSize="18sp"
+        android:text="Update"
+        />
+    <EditText
+        android:id="@+id/update_confirmpsw_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/sign_up_btn"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp" />
-
-    <TextView
-        android:id="@+id/old_user_txtView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/sign_up_btn"
-        android:layout_alignRight="@id/sign_up_btn"
-        android:layout_marginLeft="170dp"
+        android:layout_above="@id/update_btn"
         android:layout_marginBottom="5dp"
-        android:clickable="true"
-        android:gravity="end"
-        android:hint="Already have an Account?"
-        android:padding="5dp"
-        android:textAlignment="textEnd"
-        android:textAllCaps="false"
-        android:textColorHint="@color/colorLogo"
-        android:textSize="15sp" />
-
-    <EditText
-        android:id="@+id/confirm_psw_edTxt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/old_user_txtView"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="5dp"
         android:background="@drawable/input_design"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
         android:padding="12dp"
         android:textAllCaps="false"
-        android:textColor="@color/colorLogo"
+        android:textSize="18sp"
+        android:hint="Nhập lại mật khẩu"
         android:textColorHint="@color/colorLogo"
-        android:textSize="18sp" />
+        android:textColor="@color/colorLogo"
+        android:inputType="textPassword"/>
 
     <EditText
-        android:id="@+id/password_edTxt"
+        android:id="@+id/updatepsw_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/confirm_psw_edTxt"
+        android:layout_above="@id/update_confirmpsw_et"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
+        android:padding="12dp"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:hint="Mật khẩu"
+        android:textColorHint="@color/colorLogo"
+        android:textColor="@color/colorLogo"
+        android:inputType="textPassword"/>
+
+    <EditText
+        android:id="@+id/updatedob_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/updatepsw_et"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
+        android:padding="12dp"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:hint="Ngày sinh"
+        android:textColorHint="@color/colorLogo"
+        android:inputType="date"
+        android:textColor="@color/colorLogo"/>
+
+    <EditText
+        android:id="@+id/updatephone_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/updatedob_et"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/input_design"
-        android:hint="Password"
-        android:inputType="textPassword"
+        android:hint="Số điện thoại"
         android:padding="12dp"
         android:textAllCaps="false"
-        android:textColor="@color/colorLogo"
         android:textColorHint="@color/colorLogo"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/dob_edTxt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/password_edTxt"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/input_design"
-        android:hint="Address"
-        android:padding="12dp"
-        android:textAllCaps="false"
-        android:textColor="@color/colorLogo"
-        android:textColorHint="@color/colorLogo"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/phone_no_edTxt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/dob_edTxt"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/input_design"
-        android:hint="Phone Number"
+        android:textSize="18sp"
         android:inputType="phone"
-        android:padding="12dp"
-        android:textAllCaps="false"
-        android:textColor="@color/colorLogo"
-        android:textColorHint="@color/colorLogo"
-        android:textSize="18sp" />
+        android:textColor="@color/colorLogo"/>
 
     <EditText
-        android:id="@+id/email_edTxt"
+        android:id="@+id/updateemail_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/phone_no_edTxt"
+        android:layout_above="@id/updatephone_et"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="10dp"
@@ -131,29 +108,34 @@
         android:textColorHint="@color/colorLogo"
         android:textSize="18sp" />
 
+
     <EditText
-        android:id="@+id/fName_edTxt"
-        android:layout_width="match_parent"
+        android:id="@+id/updatelName_et"
         android:layout_height="wrap_content"
-        android:layout_above="@id/email_edTxt"
+        android:layout_width="match_parent"
+        android:layout_above="@id/updateemail_et"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="10dp"
+        android:layout_alignParentRight="true"
         android:background="@drawable/input_design"
-        android:hint="Name"
+        android:hint="Họ và tên"
         android:padding="12dp"
         android:textAllCaps="false"
-        android:textColor="@color/colorLogo"
         android:textColorHint="@color/colorLogo"
-        android:textSize="18sp"></EditText>
+        android:textSize="18sp"
+        android:textColor="@color/colorLogo">
+
+    </EditText>
 
     <ImageView
-        android:id="@+id/app_logo"
+        android:id="@+id/profile_pic"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_above="@id/fName_edTxt"
+        android:layout_above="@id/updatelName_et"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:src="@drawable/logo_transparent" />
-
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/user1" />
 </RelativeLayout>
+</FrameLayout>
