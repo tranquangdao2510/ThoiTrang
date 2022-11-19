@@ -11,7 +11,7 @@ namespace API.Models.Entity
     {
         [Key]
         public int Id { get; set; }
-        [Display(Name = "Tên email")]
+        public int Name { get; set; }
         public int Customer_id { get; set; }
         public double Total_amount { get; set; }
         public int Payment { get; set; }

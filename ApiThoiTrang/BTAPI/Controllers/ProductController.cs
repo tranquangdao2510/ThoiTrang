@@ -6,60 +6,38 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace API.Controllers
+namespace BTAPI.Controllers
 {
-    public class CustomerController : Controller
+    public class ProductController : Controller
     {
-        private IRepository<Customer> Table;
-        public CustomerController()
+        private IRepository<Product> product;
+        private IRepository<Category> category;
+        public ProductController()
         {
-            Table = new Repository<Customer>();
+            product = new Repository<Product>();
+            category = new Repository<Category>();
         }
-        // GET: Customer
+        // GET: Product
         public ActionResult Index()
         {
-            return View(Table.GetAll());
+            return View(product.GetAll());
         }
 
-
-        // GET: Customer/Create
+        // GET: Size/Create
         public ActionResult Create()
         {
+            ViewBag.category = category.GetAll();
             return View();
         }
 
-        // POST: Customer/Create
+        // POST: Size/Create
         [HttpPost]
-        public ActionResult Create(Customer input)
+        public ActionResult Create(Product input)
         {
             try
             {
                 // TODO: Add insert logic here
-                input.Brithday = DateTime.Now;
-                Table.Add(input);
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Customer/Edit/5
-        public ActionResult Edit(int id)
-        {
-            var byId = Table.GetById(id);
-            return View(byId);
-        }
-
-        // POST: Customer/Edit/5
-        [HttpPost]
-        public ActionResult Edit(Customer input)
-        {
-            try
-            {
-                // TODO: Add update logic heres
-                Table.Edit(input);
+                product.Add(input);
                 return RedirectToAction("Index");
             }
             catch
@@ -68,12 +46,35 @@ namespace API.Controllers
             }
         }
 
-        // GET: Customer/Delete/5
+        // GET: Size/Edit/5
+        public ActionResult Edit(int id)
+        {
+            ViewBag.category = category.GetAll();
+            return View(product.GetById(id));
+        }
+
+        // POST: Size/Edit/5
+        [HttpPost]
+        public ActionResult Edit(Product input)
+        {
+            try
+            {
+                // TODO: Add update logic here
+                product.Edit(input);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View(input);
+            }
+        }
+
+
+
         public ActionResult Delete(int id)
         {
-            Table.Remove(id);
+            product.Remove(id);
             return RedirectToAction("Index");
         }
-     
     }
 }
