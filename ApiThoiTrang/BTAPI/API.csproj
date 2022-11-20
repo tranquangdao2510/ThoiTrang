@@ -242,6 +242,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\API\LoginController.cs" />
+    <Compile Include="Controllers\API\CustomerApiController.cs" />
+    <Compile Include="Controllers\API\ProductApiController.cs" />
     <Compile Include="Controllers\BusinessController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ColerController.cs" />
