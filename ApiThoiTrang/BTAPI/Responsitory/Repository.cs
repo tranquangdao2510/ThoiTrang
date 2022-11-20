@@ -27,7 +27,7 @@ namespace API.Responsitory
                 db.SaveChanges();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }

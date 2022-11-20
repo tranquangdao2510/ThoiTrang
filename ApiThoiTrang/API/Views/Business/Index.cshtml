@@ -1,0 +1,48 @@
+﻿@model IEnumerable<API.Models.Entity.Admin.Business>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="padding:25px; margin-top:0px;">List Business</h2>
+<div class="box box-danger" style="padding:25px">
+    <p>
+        @*@Html.ActionLink("Update", "Update")*@
+        <a href="/Business/Update" class="btn btn-success">Update</a>
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                IController
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Status
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

@@ -35,6 +35,7 @@ namespace API.Controllers
             try
             {
                 // TODO: Add insert logic here
+                input.Brithday = DateTime.Now;
                 Table.Add(input);
                 return RedirectToAction("Index");
             }

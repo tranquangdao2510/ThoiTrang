@@ -12,13 +12,13 @@ namespace API.Controllers
     public class HomeController : Controller
     {
         private IRepository<Color> ColerTable;
-        private IRepository<Employes> users;
+        private IRepository<Employes> employes;
         private DbConn db;
         public HomeController()
         {
             db = new DbConn();
             ColerTable = new Repository<Color>();
-            users = new Repository<Employes>();
+            employes = new Repository<Employes>();
         }
 
         public ActionResult Login()
@@ -32,7 +32,8 @@ namespace API.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var data = users.GetAll().FirstOrDefault(x=>x.Email == email);
+                    //var password = Unnity.EncryptString(_password);
+                    var data = employes.GetAll().FirstOrDefault(x=>x.Email == email);
                     if (data != null)
                     {
                        if (data.Password.Equals(password) && data.Status == false)
